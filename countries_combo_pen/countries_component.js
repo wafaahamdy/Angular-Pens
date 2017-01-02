@@ -1,7 +1,7 @@
 /********
 This code is created by Wafaa Hamdy : Full Stack Developer , 
 
-*****  Auto Complete component that can be used within any angular application and is populated from .Json file
+*****  countries auto populated select element component that can be used within any angular application and is populated from .Json file
 
 ******/
 
@@ -16,7 +16,8 @@ angular.module('countriesSelectApp', [])
 .service('countriesSelectService', countriesSelectService)
 
 .component('countriesSelect', {
-  templateUrl: 'countries_component_template.html',
+ // templateUrl: 'countries_component_template.html',
+  template: '<div ng-if = "$ctrl.errmsg" > Error :  {{$ctrl.errmsg}}</div><div class="form-group" ng-if = "!$ctrl.errmsg"><select  ng-model="$ctrl.csValue"  name="{{$ctrl.name}}" id="{{$ctrl.id}}"> <option ng-repeat="option in $ctrl.list" value="{{option.code}}">{{option.name}}</option></select> </div>',
   controller: countriesSelectController,
   bindings: {
     name: '@',
