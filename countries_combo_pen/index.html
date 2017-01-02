@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> Countries dropdown with Angular & Json </title>
+
+<link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h2> Countries dropdown dynamic populated select element with Angular & Json </h2>
+<div ng-app = "countriesSelectApp" class="part" > 
+<div ng-controller = "test as mctrl"> 
+<countries-select
+id="country" 
+name = "country"
+json-url = "countries.json"
+cs-value ="mctrl.state"
+
+> 
+</countries-select>
+
+from test controller : {{mctrl.state}}
+  
+  <p> <strong> id : </strong> id value you want for input field to use it in your code </p>
+ <p> <strong> name : </strong> name value you want for input field to use it in your code</p>
+
+<p> <strong> json-url : </strong> url for json file that will be used to populate autocomplete value from </p>
+  
+  <p> <strong> cs-value : </strong> is the variable in your controller that will be binded to the autocomplete input value</p> 
+
+
+</body>
+<script type="text/javascript" src="angular.min.js"></script>
+
+<script type="text/javascript" src="countries_component.js"></script>
+
+</html>
